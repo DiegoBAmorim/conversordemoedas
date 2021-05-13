@@ -1,16 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import React, { Component } from 'react';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import Conversor from './src/Conversor'
+//https://free.currencyconverterapi.com/api/v5/convert?q=USD_BRL&compact=ultra&apiKey=7c5ef455b88d735bc6ad
+class App extends Component{
+  render(){
+    return(
+      <SafeAreaView style={styles.container}>
+       <Conversor moedaA="USD" moedaB="BRL"/>
+       <Conversor moedaA="EUR" moedaB="BRL"/>
+      </SafeAreaView>
+    );
+  }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -19,3 +21,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+export default App;
